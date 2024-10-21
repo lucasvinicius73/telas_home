@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:telas_home/widgets/custom_button_login.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -78,48 +79,18 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 80,
                 ),
-                Material(
-                  color: const Color(0xFF5e5ce5),
-                  child: InkWell(
-                    onTap: () =>
-                        Navigator.of(context).pushReplacementNamed("/tinder"),
-                    borderRadius: BorderRadius.circular(5),
-                    child: Container(
-                      height: 40,
-                      decoration:
-                          BoxDecoration(borderRadius: BorderRadius.circular(5)),
-                      child: const Center(
-                          child: Text(
-                        "Sign Up with Email ID",
-                        style: TextStyle(color: Colors.white),
-                      )),
-                    ),
-                  ),
-                ),
+                const CustomButtonLogin(
+                    backgroundColor: Color(0xFF5e5ce5),
+                    textColor: Colors.white,
+                    title: "Sign Up with Email ID"),
                 const SizedBox(
                   height: 12,
                 ),
-                Material(
-                  color: Colors.white,
-                  child: InkWell(
-                    onTap: () =>
-                        Navigator.of(context).pushReplacementNamed("/tinder"),
-                    child: Container(
-                      height: 40,
-                      decoration:
-                          BoxDecoration(borderRadius: BorderRadius.circular(5)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "assets/google.png",
-                            scale: 19,
-                          ),
-                          const Text("Sign Up with Google"),
-                        ],
-                      ),
-                    ),
-                  ),
+                const CustomButtonLogin(
+                  backgroundColor: Colors.white,
+                  textColor: Colors.black,
+                  title: "Sign Up with Google",
+                  icon: "assets/google.png",
                 ),
                 const SizedBox(
                   height: 30,
